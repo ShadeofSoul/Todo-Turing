@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>todo</title>
+  </head>
+  <body>
+    <header>
+      <h3>TODO list</h3>
+    </header>
+    <main>
+      <form class="todo-form">
+        <input class="todo-input" type="text" />
+        <button class="btn-submit" type="submit">+</button>
+      </form>
+      <section>
+        <div class="filter">
+          <div class="radio-option">
+            <input type="radio" name="filter" id="all" value="all" checked />
+            <label for="all" class="radio-label">All</label>
+          </div>
+          <div class="radio-option">
+            <input
+              type="radio"
+              name="filter"
+              id="completed"
+              value="completed"
+            />
+            <label for="completed" class="radio-label">Completed</label>
+          </div>
+          <div class="radio-option">
+            <input
+              type="radio"
+              name="filter"
+              id="uncompleted"
+              value="uncompleted"
+            />
+            <label class="radio-label" for="uncompleted">Uncompleted</label>
+          </div>
+        </div>
+        <div class="todo-list"></div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

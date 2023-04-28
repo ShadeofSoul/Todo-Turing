@@ -1,0 +1,130 @@
+:root {
+  --black: #292929;
+  --green: #2ecc40;
+  --red: #b8100a;
+  --font-size: clamp(0.7rem, 2.6vw, 1.3rem);
+  --line-height: 1.5;
+  --height: calc(var(--line-height) * var(--font-size));
+}
+* {
+  font-size: var(--font-size);
+  box-sizing: border-box;
+}
+html {
+  background-color: var(--black);
+}
+header {
+  text-align: center;
+  border-bottom: 3px solid royalblue;
+  color: white;
+}
+main {
+  width: 50vw;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.todo-form {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  padding-top: 20px;
+  gap: 10px;
+}
+button {
+  cursor: pointer;
+  height: var(--height);
+  width: var(--height);
+  outline: 0;
+  border: 0;
+}
+
+.todo-input {
+  border: none;
+  cursor: pointer;
+  background-color: gray;
+  height: var(--height);
+}
+
+.todo-item {
+  display: grid;
+  grid-template-columns: 1fr min-content min-content;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+  transition: all 200ms ease;
+  transform: translateY(0);
+  transform-origin: bottom left;
+}
+
+.todo-item button:nth-child(2) {
+  background-color: var(--green);
+}
+.todo-item button:nth-child(3) {
+  background-color: var(--red);
+}
+
+p {
+  margin: 0;
+  padding: 5px;
+  background-color: black;
+  color: aliceblue;
+}
+
+.todo-content {
+  line-height: calc(var(--height) - 0.5em);
+  font-size: inherit;
+  padding: 0.25em 1em;
+  flex: 1;
+  transition: text-decoration 150ms linear, opacity 150ms linear;
+}
+
+.rotate-fade {
+  transform: rotate(30deg) translateY(2em);
+  opacity: 0;
+}
+
+.todo-delete {
+  background-color: var(--color-delete);
+}
+
+.todo-completed {
+  background-color: var(--color-checked);
+}
+
+.completed .todo-content {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 1em;
+  gap: 1em;
+  font-size: var(--font-size);
+}
+
+.radio-option {
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+
+.radio-label {
+  font-size: inherit;
+  display: block;
+  width: 100%;
+  padding: 0 0.5em;
+  box-shadow: inset 0 -0.25em royalblue;
+  transition: all 150ms linear;
+}
+
+input[type="radio"] {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
